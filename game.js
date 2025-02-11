@@ -1,8 +1,8 @@
 let workTittle = document.querySelector("#work");
 let breakTittle = document.querySelector("#break");
 
-let workTime = 1; // Default 25 minutes for work
-let breakTime = 2;  // Default 5 minutes for break
+let workTime = 30; // Default 25 minutes for work
+let breakTime = 5;  // Default 5 minutes for break
 let seconds = 0; // Start with 00 seconds
 let isWorkTime = true; // Track work/break state
 let timer; // Store interval
