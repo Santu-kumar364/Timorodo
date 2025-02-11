@@ -7,12 +7,12 @@ With a clean interface and seamless automation, Timorodo lets you concentrate on
  **Future Upgrades**
 Timorodo is constantly evolving! In future updates, I would like to add features such as:
 
-**Custom session lengths** – Fully adjustable work & break times
+**1. Custom session lengths** – Fully adjustable work & break times
 
-**Dark mode support** – Reduce eye strain
+**2. Dark mode support** – Reduce eye strain
 
-**Task tracking & analytics** – Monitor your productivity trends
+**3. Task tracking & analytics** – Monitor your productivity trends
 
-**Sound & notifications** – Get alerts when time is up
+**4. Sound & notifications** – Get alerts when time is up
 
-**Multi-device sync** – Access your timer from any device
+**5. Multi-device sync** – Access your timer from any device
