@@ -7,6 +7,7 @@ With a clean interface and seamless automation, Timorodo lets you concentrate on
  **Future Upgrades**
 Timorodo is constantly evolving! In future updates, expect:
 ✅ Custom session lengths – Fully adjustable work & break times
+
 ✅ Dark mode support – Reduce eye strain
 ✅ Task tracking & analytics – Monitor your productivity trends
 ✅ Sound & notifications – Get alerts when time is up
