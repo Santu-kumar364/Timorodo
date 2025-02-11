@@ -1,47 +1,66 @@
-let workTittle=document.querySelector("#work");
-let breakTittle=document.querySelector("#break");
+let workTittle = document.querySelector("#work");
+let breakTittle = document.querySelector("#break");
 
-let workTime=5;
-let breakTime=2;
-let seconds="00";
-window.onload=() => {
-    document.querySelector("#minutes").innerHTML=workTime;
-    document.querySelector("#seconds").innerHTML=seconds;
+let workTime = 1; // Default 25 minutes for work
+let breakTime = 2;  // Default 5 minutes for break
+let seconds = 0; // Start with 00 seconds
+let isWorkTime = true; // Track work/break state
+let timer; // Store interval
+
+window.onload = () => {
+    document.querySelector("#minutes").innerHTML = workTime;
+    document.querySelector("#seconds").innerHTML = "00";
     workTittle.classList.add("active");
-}
+};
 
-function start () {
-    //change buttons
-    document.getElementById('start').style.display="none";
-    document.querySelector('#reset').style.display="block";
+function start() {
+    // Prevent multiple timers from running
+    clearInterval(timer);
 
-    seconds=59;
-    let workMinutes=workTime-1;
-    let breakMinutes=breakTime-1;
-    let breakCount=0;
-    let timerFunction=() => {
-        document.querySelector("#minutes").innerHTML=workMinutes;
-        document.querySelector("#seconds").innerHTML=seconds;
-        seconds=seconds-1;
-        if (seconds==0) {
-            workMinutes-=1;
-            if (workMinutes==-1) {
-                if (breakCount==0) {
-                    workMinutes=breakMinutes;
-                    breakCount=1;
-                    workTittle.classList.remove('active');
-                    breakTittle.classList.add('active');
-                }
-                else {
-                    breakMinutes=workMinutes;
-                    breakCount=0;
-                    breakTittle.classList.remove('active');
-                    workTittle.classList.add('active');
-                }
+    document.getElementById('start').style.display = "none";
+    document.querySelector('#reset').style.display = "block";
+
+    let minutes = isWorkTime ? workTime : breakTime;
+    let seconds = 0;
+
+    timer = setInterval(() => {
+        document.querySelector("#minutes").innerHTML = minutes.toString().padStart(2, '0');
+        document.querySelector("#seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+        if (minutes === 0 && seconds === 0) {
+            isWorkTime = !isWorkTime; // Toggle work/break
+            minutes = isWorkTime ? workTime : breakTime;
+            seconds = 0;
+
+            // Switch active class for work/break
+            if (isWorkTime) {
+                breakTittle.classList.remove("active");
+                workTittle.classList.add("active");
+            } else {
+                workTittle.classList.remove("active");
+                breakTittle.classList.add("active");
             }
-            seconds=59;
+        } else {
+            if (seconds === 0) {
+                minutes--;
+                seconds = 59;
+            } else {
+                seconds--;
+            }
         }
-    }
-    setInterval(timerFunction, 1000);
+    }, 1000);
 }
+
+// Reset function to stop the timer and reset values
+document.querySelector("#reset").addEventListener("click", () => {
+    clearInterval(timer);
+    isWorkTime = true;
+    document.querySelector("#minutes").innerHTML = workTime;
+    document.querySelector("#seconds").innerHTML = "00";
+    workTittle.classList.add("active");
+    breakTittle.classList.remove("active");
+
+    document.getElementById('start').style.display = "block";
+    document.querySelector('#reset').style.display = "none";
+});
  
