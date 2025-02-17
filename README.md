@@ -5,7 +5,7 @@
 With a clean interface and seamless automation, Timorodo lets you concentrate on your tasks without worrying about time management. Whether you're studying, coding, or working, Timorodo keeps you in the zone!  
 
  **Future Upgrades**
-Timorodo is constantly evolving! In future updates, I would like to add features such as:
+ In future updates, I would like to add features such as:
 
 **1. Custom session lengths** – Fully adjustable work & break times
 
@@ -14,5 +14,4 @@ Timorodo is constantly evolving! In future updates, I would like to add features
 **3. Task tracking & analytics** – Monitor your productivity trends
 
 **4. Sound & notifications** – Get alerts when time is up
-
-**5. Multi-device sync** – Access your timer from any device
+ 
